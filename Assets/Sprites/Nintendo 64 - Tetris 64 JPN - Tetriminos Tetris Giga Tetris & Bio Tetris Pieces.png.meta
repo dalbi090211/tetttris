@@ -1,0 +1,2709 @@
+fileFormatVersion: 2
+guid: 3590c1e2fda7ad644854d93ddb03c122
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5369907799933476672
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_0
+  - first:
+      213: 1531152350093276437
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_1
+  - first:
+      213: 1001090257632374311
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_2
+  - first:
+      213: 8420949010332422205
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_3
+  - first:
+      213: 8168331415167682996
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_4
+  - first:
+      213: -2385513266888555752
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_5
+  - first:
+      213: 6802055660061545777
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_6
+  - first:
+      213: 6319927026270646906
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_7
+  - first:
+      213: 2887896675239844226
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_8
+  - first:
+      213: 8323709495059651876
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_9
+  - first:
+      213: -1760241635253012978
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_10
+  - first:
+      213: 981245245654654716
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_11
+  - first:
+      213: 8078854526542285781
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_12
+  - first:
+      213: -4919130860454470743
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_13
+  - first:
+      213: 204131111155131941
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_14
+  - first:
+      213: -8740546928516888262
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_15
+  - first:
+      213: -442415093909349831
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_16
+  - first:
+      213: -3134316305220219837
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_17
+  - first:
+      213: 7570815112246325370
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_18
+  - first:
+      213: -9083793208438999131
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_19
+  - first:
+      213: 355187256214487643
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_20
+  - first:
+      213: 2458605056385531162
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_21
+  - first:
+      213: -5180403882184084236
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_22
+  - first:
+      213: -6392352945146090818
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_23
+  - first:
+      213: 5210776267660010890
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_24
+  - first:
+      213: -8981868578587808767
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_25
+  - first:
+      213: 3471408669505823978
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_26
+  - first:
+      213: 8945290940274396663
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_27
+  - first:
+      213: 8398578774975697816
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_28
+  - first:
+      213: -3599550555179923259
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_29
+  - first:
+      213: 2318895559554280547
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_30
+  - first:
+      213: 7460470231799012566
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_31
+  - first:
+      213: -2965703819370587978
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_32
+  - first:
+      213: -9117081951628875733
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_33
+  - first:
+      213: 7374438747112588480
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_34
+  - first:
+      213: 2476645340282229849
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_35
+  - first:
+      213: 7830439354223600458
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_36
+  - first:
+      213: -4415990318835414991
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_37
+  - first:
+      213: -1288387723947024412
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_38
+  - first:
+      213: -4516900448501056380
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_39
+  - first:
+      213: -2607140672359824243
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_40
+  - first:
+      213: 7494264185574191032
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_41
+  - first:
+      213: 2509507344765638050
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_42
+  - first:
+      213: -6681106358345691112
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_43
+  - first:
+      213: -7343129297410368843
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_44
+  - first:
+      213: -6944847967158943638
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_45
+  - first:
+      213: 6339710964684589218
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_46
+  - first:
+      213: -5317873603760694311
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_47
+  - first:
+      213: -1245285176510335257
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_48
+  - first:
+      213: -5494806868952988950
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_49
+  - first:
+      213: 9054900595020097472
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_50
+  - first:
+      213: 49302133004539209
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_51
+  - first:
+      213: -3574579084338431499
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_52
+  - first:
+      213: 8543914898116949324
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_53
+  - first:
+      213: -3888311195241049274
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_54
+  - first:
+      213: -2427493801821323725
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_55
+  - first:
+      213: -7291805511036137632
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_56
+  - first:
+      213: -7056527334178477765
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_57
+  - first:
+      213: -7085285562800891984
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_58
+  - first:
+      213: 1882858578277366767
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_59
+  - first:
+      213: 5006683724634304860
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_60
+  - first:
+      213: 9009929885538417645
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_61
+  - first:
+      213: 7878901703580221084
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_62
+  - first:
+      213: -6536800580382059822
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_63
+  - first:
+      213: -3534818755363131660
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_64
+  - first:
+      213: 5676964485797225762
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_65
+  - first:
+      213: 4225923793870281732
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_66
+  - first:
+      213: 2277137126241288124
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_67
+  - first:
+      213: 2374192917858641259
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_68
+  - first:
+      213: 5455201564540685744
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_69
+  - first:
+      213: -8446736931177369204
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_70
+  - first:
+      213: -9191984987103215182
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_71
+  - first:
+      213: 4290228765373397085
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_72
+  - first:
+      213: 903961983403414496
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_73
+  - first:
+      213: 1155255907213627652
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_74
+  - first:
+      213: -5735975289127654858
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_75
+  - first:
+      213: 980102442168992244
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_76
+  - first:
+      213: -4512635163429562051
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_77
+  - first:
+      213: -7606396123486484693
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_78
+  - first:
+      213: 718621559447742469
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_79
+  - first:
+      213: 8861187534089716517
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_80
+  - first:
+      213: 2531721540399030246
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_81
+  - first:
+      213: -1962469144178157225
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_82
+  - first:
+      213: 8390003886159706680
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_83
+  - first:
+      213: -2996129152802477574
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_84
+  - first:
+      213: 8350094939385816718
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_85
+  - first:
+      213: -156155344944309918
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_86
+  - first:
+      213: -1797463660026690206
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_87
+  - first:
+      213: -781579299545868999
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_88
+  - first:
+      213: 9065589954906372453
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_89
+  - first:
+      213: -7053854877489356653
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_90
+  - first:
+      213: 5123618588760818201
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_91
+  - first:
+      213: 5465552781120138136
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_92
+  - first:
+      213: 8655210702976101505
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_93
+  - first:
+      213: 4938464755039064275
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_94
+  - first:
+      213: 3748101627886182560
+    second: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+      Pieces_95
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 951
+        width: 33
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f52ab61beb58a40800000000000000
+      internalID: 5369907799933476672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 935
+        width: 10
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 515705433febf3510800000000000000
+      internalID: 1531152350093276437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 879
+        width: 34
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72e284a094694ed00800000000000000
+      internalID: 1001090257632374311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 903
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d309a8042883dd470800000000000000
+      internalID: 8420949010332422205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_4
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 903
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9cbb8f42ebb5170800000000000000
+      internalID: 8168331415167682996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_5
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 903
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8134020a254f4eed0800000000000000
+      internalID: -2385513266888555752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_6
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 903
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13557608591c56e50800000000000000
+      internalID: 6802055660061545777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 871
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a72b04f5524e4b750800000000000000
+      internalID: 6319927026270646906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_8
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 871
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 289d3b3b9bed31820800000000000000
+      internalID: 2887896675239844226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_9
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 871
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42d93925fa1c38370800000000000000
+      internalID: 8323709495059651876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_10
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 871
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0634e31f8d5297e0800000000000000
+      internalID: -1760241635253012978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_11
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 863
+        width: 34
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe59c02a551e9d00800000000000000
+      internalID: 981245245654654716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 847
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5db0c96636bdd1070800000000000000
+      internalID: 8078854526542285781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_13
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 695
+        width: 65
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab13fa8b8cbbbbb0800000000000000
+      internalID: -4919130860454470743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 815
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 526e1000a2835d200800000000000000
+      internalID: 204131111155131941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_15
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 815
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a398e1fb0e653b680800000000000000
+      internalID: -8740546928516888262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 783
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a134ce0d93cd9f0800000000000000
+      internalID: -442415093909349831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_17
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 783
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34c42ad3deba084d0800000000000000
+      internalID: -3134316305220219837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_18
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 783
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a70f9919b30f01960800000000000000
+      internalID: 7570815112246325370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_19
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 783
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a733e57432efe180800000000000000
+      internalID: -9083793208438999131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 751
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b52096b7de0ede400800000000000000
+      internalID: 355187256214487643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_21
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 751
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1db6d4c548be1220800000000000000
+      internalID: 2458605056385531162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 727
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f4fc59bd128b18b0800000000000000
+      internalID: -5180403882184084236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 711
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eba25a15ddcc947a0800000000000000
+      internalID: -6392352945146090818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_24
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 703
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8529e55865605840800000000000000
+      internalID: 5210776267660010890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 687
+        width: 25
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ce702ad1ef95380800000000000000
+      internalID: -8981868578587808767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_26
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 671
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae42b18eacbec2030800000000000000
+      internalID: 3471408669505823978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 647
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd439b47be042c70800000000000000
+      internalID: 8945290940274396663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_28
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 647
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893df84f5eebd8470800000000000000
+      internalID: 8398578774975697816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_29
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 647
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8c07f57d3db0ec0800000000000000
+      internalID: -3599550555179923259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_30
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 647
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36ca672b93f5e2020800000000000000
+      internalID: 2318895559554280547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_31
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 663
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dc91c7062ae88760800000000000000
+      internalID: 7460470231799012566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_32
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 519
+        width: 18
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b89569d614b7d6d0800000000000000
+      internalID: -2965703819370587978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 615
+        width: 41
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b282905f44e997180800000000000000
+      internalID: -9117081951628875733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_34
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 591
+        width: 10
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c4c58318f4475660800000000000000
+      internalID: 7374438747112588480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 559
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 954162ea0dfce5220800000000000000
+      internalID: 2476645340282229849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_36
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 559
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43acbfea1f4bac60800000000000000
+      internalID: 7830439354223600458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 527
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1384042b33047b2c0800000000000000
+      internalID: -4415990318835414991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_38
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 527
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4efd925f03abe1ee0800000000000000
+      internalID: -1288387723947024412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_39
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 527
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48cba4149feb051c0800000000000000
+      internalID: -4516900448501056380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_40
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 527
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8405882f5391dbd0800000000000000
+      internalID: -2607140672359824243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 495
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bfe41a0299f00860800000000000000
+      internalID: 7494264185574191032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_42
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 487
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a55df552af83d220800000000000000
+      internalID: 2509507344765638050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_43
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 495
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81093344a21f743a0800000000000000
+      internalID: -6681106358345691112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_44
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 487
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ba57104fc6f71a90800000000000000
+      internalID: -7343129297410368843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 455
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a60c56ab191fe9f90800000000000000
+      internalID: -6944847967158943638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_46
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 455
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a88cac788d2bf750800000000000000
+      internalID: 6339710964684589218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 423
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dbda67f12e1336b0800000000000000
+      internalID: -5317873603760694311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_48
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 423
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e6ba02dabbd7bee0800000000000000
+      internalID: -1245285176510335257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_49
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 423
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae24ea2f3468eb3b0800000000000000
+      internalID: -5494806868952988950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_50
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 423
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c765a2cd1879ad70800000000000000
+      internalID: 9054900595020097472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 391
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 945976c57082fa000800000000000000
+      internalID: 49302133004539209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_52
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 383
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f97770034b846ec0800000000000000
+      internalID: -3574579084338431499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_53
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 391
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45bd6d0555129670800000000000000
+      internalID: 8543914898116949324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_54
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 383
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6439b7fa191f90ac0800000000000000
+      internalID: -3888311195241049274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 351
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e3af7af3fcf4ed0800000000000000
+      internalID: -2427493801821323725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_56
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 351
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f8477758d4eca90800000000000000
+      internalID: -7291805511036137632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_57
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 351
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b392572d6cd221e90800000000000000
+      internalID: -7056527334178477765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_58
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 351
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b79c01f1520cad90800000000000000
+      internalID: -7085285562800891984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 319
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: febf480b6e1412a10800000000000000
+      internalID: 1882858578277366767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_60
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 319
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51be8d22505b7540800000000000000
+      internalID: 5006683724634304860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_61
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 319
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deb71b68e73b90d70800000000000000
+      internalID: 9009929885538417645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_62
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 319
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e7e1eea5b775d60800000000000000
+      internalID: 7878901703580221084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 287
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d292ce618e9845a0800000000000000
+      internalID: -6536800580382059822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_64
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 279
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe213df11dc1fec0800000000000000
+      internalID: -3534818755363131660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_65
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 287
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 225a37a3f11a8ce40800000000000000
+      internalID: 5676964485797225762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_66
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 279
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c5285fc4f75aa30800000000000000
+      internalID: 4225923793870281732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_67
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 247
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf377ac6240a9f10800000000000000
+      internalID: 2277137126241288124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_68
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 239
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b65663931e3d2f020800000000000000
+      internalID: 2374192917858641259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_69
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 247
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bd4a988be4c4bb40800000000000000
+      internalID: 5455201564540685744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_70
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 239
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81fff9838927ca80800000000000000
+      internalID: -8446736931177369204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_71
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 207
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b14dfefa528f6080800000000000000
+      internalID: -9191984987103215182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_72
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 199
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d587e3dd454f98b30800000000000000
+      internalID: 4290228765373397085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_73
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 207
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3d73f62a48b8c00800000000000000
+      internalID: 903961983403414496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_74
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 199
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 401d326702b480010800000000000000
+      internalID: 1155255907213627652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63aa0237dd8b560b0800000000000000
+      internalID: -5735975289127654858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_76
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 167
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f1c9f47af50a9d00800000000000000
+      internalID: 980102442168992244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_77
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 167
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3918d25a36ef51c0800000000000000
+      internalID: -4512635163429562051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_78
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 167
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b270eaea607a07690800000000000000
+      internalID: -7606396123486484693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_79
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508e1da308e09f900800000000000000
+      internalID: 718621559447742469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_80
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 135
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52389891d1349fa70800000000000000
+      internalID: 8861187534089716517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_81
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 135
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef50bdc35b722320800000000000000
+      internalID: 2531721540399030246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_82
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 135
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759989206b8e3c4e0800000000000000
+      internalID: -1962469144178157225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_83
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 103
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83a32b215184f6470800000000000000
+      internalID: 8390003886159706680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_84
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 103
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af92402e86c9b66d0800000000000000
+      internalID: -2996129152802477574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_85
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 103
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e86e0ee4b1f71e370800000000000000
+      internalID: 8350094939385816718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_86
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 103
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 269d0d68a8935ddf0800000000000000
+      internalID: -156155344944309918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_87
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2658f6713502e07e0800000000000000
+      internalID: -1797463660026690206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_88
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 71
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93515ce94c54725f0800000000000000
+      internalID: -781579299545868999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_89
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 71
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5693b8d48027fcd70800000000000000
+      internalID: 9065589954906372453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_90
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 71
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3902712ac5cab1e90800000000000000
+      internalID: -7053854877489356653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 39
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9124dabd5ffba1740800000000000000
+      internalID: 5123618588760818201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_92
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b60d3fb4b89db40800000000000000
+      internalID: 5465552781120138136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_93
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18cac0fe64c7d1870800000000000000
+      internalID: 8655210702976101505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_94
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 7
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d0d3e39783f88440800000000000000
+      internalID: 4938464755039064275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Tetris 64 JPN - Tetriminos Tetris Giga Tetris & Bio Tetris
+        Pieces_95
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 0
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a02830829ee30430800000000000000
+      internalID: 3748101627886182560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
