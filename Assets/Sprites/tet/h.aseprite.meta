@@ -33,10 +33,10 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 64
+    spritePixelsToUnits: 128
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638863629077771336
+  platformSettingsDirtyTick: 638863762610584432
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 128
-      height: 128
-    spriteID: ed984d2342c3ac3469410be9c6aaa0a3
+      width: 54
+      height: 36
+    spriteID: 2533bd141100f1144841ec67fa0dee62
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -159,9 +159,9 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 128
-        height: 128
-      spriteId: ed984d2342c3ac3469410be9c6aaa0a3
+        width: 54
+        height: 36
+      spriteId: 2533bd141100f1144841ec67fa0dee62
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -204,5 +204,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 128, y: 128}
-  previousTextureSize: {x: 256, y: 256}
+  canvasSize: {x: 54, y: 36}
+  previousTextureSize: {x: 64, y: 64}

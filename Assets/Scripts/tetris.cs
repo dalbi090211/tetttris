@@ -2,25 +2,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum tetris_type{
-    ㅣ = 1,
-    ㄴ = 2,
-    ㅁ = 3,
-    ㄹ = 4,
-    ㅗ = 5,
+    ㅣ = 0,
+    ㄴ = 1,
+    ㅁ = 2,
+    ㄹ = 3,
+    ㅗ = 4,
+    reverse_ㄴ = 5,
+    reverse_ㄹ = 6
 }
 
 [System.Serializable]
-public struct tetris_set{
+public struct tetris_set{   //hash도 좋을수도
     public tetris_type type;
     public GameObject block;
 }
 
 public class tetris : MonoBehaviour
 {
+    //비쥬얼 업데이트
+    [SerializeField] private float abs_unit = 0.5f;
+    [SerializeField] private Vector3 offset = new Vector3(-1, -1, 0);
+    private GameObject block_visual;    //현재 쥐고 있는 블록
+    private GameObject[,] visual_board; //현재 보드의 모든 칸 오브젝트
+
     // 초기설정용 상수
-    private int col_max = 10;
-    private int row_max = 20;
-    private tetris_type[] start_type = {tetris_type.ㅣ, tetris_type.ㄴ, tetris_type.ㅁ, tetris_type.ㄹ, tetris_type.ㅗ};
+    private int col_max = 8;
+    private int row_max = 10;
+    private tetris_type[] start_type = {tetris_type.ㅣ, tetris_type.ㄴ, tetris_type.ㅁ, tetris_type.ㄹ, tetris_type.ㅗ, tetris_type.reverse_ㄴ, tetris_type.reverse_ㄹ};
     
     // 현재 매트릭스
     private tetris_type[] current_type; // 현재 리스트에 초기화 시킬 블록 타입
@@ -41,6 +49,7 @@ public class tetris : MonoBehaviour
     
     // 테트리스 블럭정보
     [SerializeField] private List<tetris_set> tetris_set;
+    [SerializeField] private List<tetris_set> zzabari_set;
     
     // Random 인스턴스
     private System.Random random;
@@ -91,6 +100,7 @@ public class tetris : MonoBehaviour
     }
 
     private void board_init(){
+        visual_board = new GameObject[col_max, row_max];
         last_block_position = new int[2] {col_max / 2, row_max/2};
         held_block_type = null; // 홀드 시스템 초기화
         can_hold = true;
@@ -114,6 +124,8 @@ public class tetris : MonoBehaviour
         current_index = 0;
     }
 
+
+
     private void spawn_new_block(){
         if(current_index >= current_list.Count){
             list_reset();
@@ -123,6 +135,8 @@ public class tetris : MonoBehaviour
         current_block_position = new int[2] {last_block_position[0], last_block_position[1]};
         block_rotation = 0;
         current_block_shape = get_block_shape(current_block_type, block_rotation);
+        block_visual = Instantiate(tetris_set[(int)current_block_type].block, new Vector3(current_block_position[0] * abs_unit, current_block_position[1] * abs_unit, 0) + offset, Quaternion.identity, this.transform);
+        
         can_hold = true; // 새 블록이 나올 때마다 홀드 가능
     }
 
@@ -173,6 +187,26 @@ public class tetris : MonoBehaviour
                     shape[0,1] = shape[1,0] = shape[1,1] = shape[2,1] = 1;
                 }
                 break;
+
+            case tetris_type.reverse_ㄴ:
+                if(rotation == 0){
+                    shape[1,0] = shape[1,1] = shape[1,2] = shape[0,2] = 1;
+                } else if(rotation == 1){
+                    shape[0,0] = shape[0,1] = shape[1,1] = shape[2,1] = 1;
+                } else if(rotation == 2){
+                    shape[1,0] = shape[1,1] = shape[1,2] = shape[2,0] = 1;
+                } else {
+                    shape[0,1] = shape[1,1] = shape[2,1] = shape[2,2] = 1;
+                }
+                break;
+
+            case tetris_type.reverse_ㄹ:
+                if(rotation % 2 == 0){
+                    shape[0,1] = shape[0,2] = shape[1,0] = shape[1,1] = 1;
+                } else {
+                    shape[0,0] = shape[1,0] = shape[1,1] = shape[2,1] = 1;
+                }
+                break;
         }
         
         return shape;
@@ -203,6 +237,7 @@ public class tetris : MonoBehaviour
         int new_y = current_block_position[1] + dy;
         
         if(!is_collision(new_x, new_y, current_block_shape)){
+            block_visual.transform.position = new Vector3(new_x * abs_unit, new_y * abs_unit, 0) + offset;
             current_block_position[0] = new_x;
             current_block_position[1] = new_y;
         }
@@ -213,6 +248,7 @@ public class tetris : MonoBehaviour
         int[,] new_shape = get_block_shape(current_block_type, new_rotation);
         
         if(!is_collision(current_block_position[0], current_block_position[1], new_shape)){
+            block_visual.transform.rotation = Quaternion.Euler(0, 0, new_rotation * 90);
             block_rotation = new_rotation;
             current_block_shape = new_shape;
         }
@@ -228,9 +264,14 @@ public class tetris : MonoBehaviour
                     
                     if(x >= 0 && x < col_max && y >= 0 && y < row_max){
                         board[x, y, 0] = 1;
+                        visual_board[x, y] = Instantiate(zzabari_set[(int)current_block_type].block, new Vector3(x * abs_unit, y * abs_unit, 0) + offset, Quaternion.identity, this.transform);
                     }
                 }
             }
+        }
+        
+        if(block_visual != null){
+            Destroy(block_visual);
         }
         
         // 현재 위치를 마지막 위치로 저장
@@ -248,6 +289,7 @@ public class tetris : MonoBehaviour
         if(held_block_type == null){
             // 아무것도 홀드되지 않았다면 현재 블록을 홀드하고 새 블록 스폰
             held_block_type = current_block_type;
+            Destroy(block_visual);
             spawn_new_block();
         } else {
             // 이미 홀드된 블록이 있다면 서로 교체
@@ -256,11 +298,11 @@ public class tetris : MonoBehaviour
             held_block_type = temp;
             
             // 교체된 블록으로 새로 설정
-            current_block_position = new int[2] {last_block_position[0], last_block_position[1]};
             block_rotation = 0;
             current_block_shape = get_block_shape(current_block_type, block_rotation);
+            
+            // 비주얼 업데이트
+            block_visual = Instantiate(tetris_set[(int)current_block_type].block, new Vector3(current_block_position[0] * abs_unit, current_block_position[1] * abs_unit, 0) + offset, Quaternion.identity, this.transform);
         }
-        
-        Debug.Log("Held block: " + (held_block_type?.ToString() ?? "None"));
     }
 }
