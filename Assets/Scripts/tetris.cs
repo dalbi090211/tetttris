@@ -1,14 +1,16 @@
+using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using UnityEngine;
 
 public enum tetris_type{
-    ㅣ = 0,
-    ㄴ = 1,
-    ㅁ = 2,
-    ㄹ = 3,
-    ㅗ = 4,
-    reverse_ㄴ = 5,
-    reverse_ㄹ = 6
+    None = 0,
+    ㅣ = 1,
+    ㄴ = 2,
+    ㅁ = 3,
+    ㄹ = 4,
+    ㅗ = 5,
+    reverse_ㄴ = 6,
+    reverse_ㄹ = 7
 }
 
 [System.Serializable]
@@ -20,20 +22,21 @@ public struct tetris_set{   //hash도 좋을수도
 public class tetris : MonoBehaviour
 {
     //비쥬얼 업데이트
-    [SerializeField] private float abs_unit = 0.5f;
-    [SerializeField] private Vector3 offset = new Vector3(-1, -1, 0);
+    [SerializeField] private GameObject target_panel;
+    private float abs_unit;
+    private Vector3 offset;
     private GameObject block_visual;    //현재 쥐고 있는 블록
     private GameObject[,] visual_board; //현재 보드의 모든 칸 오브젝트
 
     // 초기설정용 상수
     private int col_max = 8;
     private int row_max = 10;
-    private tetris_type[] start_type = {tetris_type.ㅣ, tetris_type.ㄴ, tetris_type.ㅁ, tetris_type.ㄹ, tetris_type.ㅗ, tetris_type.reverse_ㄴ, tetris_type.reverse_ㄹ};
+    private tetris_type[] start_type = {tetris_type.ㅣ, tetris_type.ㄴ, tetris_type.ㅁ, tetris_type.ㄹ, tetris_type.ㅗ, tetris_type.reverse_ㄴ, tetris_type.reverse_ㄹ};    //게임 시작 시의 초기 조합
     
     // 현재 매트릭스
     private tetris_type[] current_type; // 현재 리스트에 초기화 시킬 블록 타입
     private List<tetris_type> current_list; // 현재 남은 블록 리스트
-    private int[,,] board; // 현재 테트리스 매트릭스 정보
+    private int[,] board; // 현재 테트리스 매트릭스 정보
 
     // 현재 블록 정보
     private int current_index;
@@ -56,13 +59,16 @@ public class tetris : MonoBehaviour
     
     // 게임 타이머
     private float fall_timer = 0f;
-    private float fall_speed = 1f;
+    private float fall_speed = 3f;
 
     private void Start()
     {
+        abs_unit = target_panel.GetComponent<RectTransform>().rect.width / (col_max+2);
+        Debug.Log("abs : " + abs_unit);
+        offset = new Vector3(-col_max/2*abs_unit+abs_unit/2, -row_max/2*abs_unit+abs_unit/2, 0); // RectTransform을 사용할 것이므로 offset은 0으로 설정
         random = new System.Random();
         current_type = start_type;
-        board = new int[col_max, row_max, start_type.Length];
+        board = new int[col_max, row_max];
         board_init();
     }
 
@@ -72,7 +78,7 @@ public class tetris : MonoBehaviour
         fall_timer += Time.deltaTime;
         if(fall_timer >= fall_speed)
         {
-            // move_block(0, 1);
+            // place_block();
             fall_timer = 0f;
         }
 
@@ -86,10 +92,10 @@ public class tetris : MonoBehaviour
             hold_block();
         }
         if(Input.GetKeyDown(KeyCode.UpArrow)){
-           move_block(0, -1);
+           move_block(0, 1);
         }
         if(Input.GetKeyDown(KeyCode.DownArrow)){
-            move_block(0, 1);
+            move_block(0, -1);
         }
         if(Input.GetKeyDown(KeyCode.LeftArrow)){
             move_block(-1, 0);
@@ -110,7 +116,13 @@ public class tetris : MonoBehaviour
     }
 
     private void board_reset(){
-        board = new int[col_max, row_max, start_type.Length];
+        board = new int[col_max, row_max];
+        // 모든 셀을 0(None)으로 초기화
+        for(int x = 0; x < col_max; x++){
+            for(int y = 0; y < row_max; y++){
+                board[x, y] = (int)tetris_type.None;
+            }
+        }
     }
 
     private void list_reset(){
@@ -124,7 +136,24 @@ public class tetris : MonoBehaviour
         current_index = 0;
     }
 
+    // 블록 타입에 맞는 GameObject를 찾는 함수
+    private GameObject get_tetris_block(tetris_type type){
+        for(int i = 0; i < tetris_set.Count; i++){
+            if(tetris_set[i].type == type){
+                return tetris_set[i].block;
+            }
+        }
+        return null; // 못 찾으면 null 반환
+    }
 
+    private GameObject get_zzabari_block(tetris_type type){
+        for(int i = 0; i < zzabari_set.Count; i++){
+            if(zzabari_set[i].type == type){
+                return zzabari_set[i].block;
+            }
+        }
+        return null; // 못 찾으면 null 반환
+    }
 
     private void spawn_new_block(){
         if(current_index >= current_list.Count){
@@ -135,7 +164,11 @@ public class tetris : MonoBehaviour
         current_block_position = new int[2] {last_block_position[0], last_block_position[1]};
         block_rotation = 0;
         current_block_shape = get_block_shape(current_block_type, block_rotation);
-        block_visual = Instantiate(tetris_set[(int)current_block_type].block, new Vector3(current_block_position[0] * abs_unit, current_block_position[1] * abs_unit, 0) + offset, Quaternion.identity, this.transform);
+        
+        // (0,0,0)에 생성한 다음 RectTransform으로 위치 조정
+        block_visual = Instantiate(get_tetris_block(current_block_type), Vector3.zero, Quaternion.identity, target_panel.transform);
+        Vector2 target_pos = new Vector2(current_block_position[0] * abs_unit + offset.x, current_block_position[1] * abs_unit + offset.y);
+        block_visual.GetComponent<RectTransform>().anchoredPosition = target_pos;
         
         can_hold = true; // 새 블록이 나올 때마다 홀드 가능
     }
@@ -144,7 +177,7 @@ public class tetris : MonoBehaviour
         int[,] shape = new int[4,4];
         
         switch(type){
-            case tetris_type.ㅣ: // I 블록
+            case tetris_type.ㅣ: 
                 if(rotation % 2 == 0){
                     shape[1,0] = shape[1,1] = shape[1,2] = shape[1,3] = 1;
                 } else {
@@ -152,59 +185,59 @@ public class tetris : MonoBehaviour
                 }
                 break;
                 
-            case tetris_type.ㄴ: // L 블록
+            case tetris_type.ㄴ: // 버그잇슴슴
                 if(rotation == 0){
-                    shape[1,0] = shape[1,1] = shape[1,2] = shape[2,2] = 1;
+                    shape[0,3] = shape[0,2] = shape[1,2] = shape[2,2] = 1;
                 } else if(rotation == 1){
-                    shape[0,1] = shape[1,1] = shape[2,1] = shape[2,0] = 1;
+                    shape[2,3] = shape[1,3] = shape[1,2] = shape[1,1] = 1;
                 } else if(rotation == 2){
-                    shape[0,0] = shape[1,0] = shape[1,1] = shape[1,2] = 1;
+                    shape[0,2] = shape[1,2] = shape[2,2] = shape[2,1] = 1;
                 } else {
-                    shape[0,1] = shape[0,2] = shape[1,1] = shape[2,1] = 1;
+                    shape[0,1] = shape[1,1] = shape[1,2] = shape[1,3] = 1;
                 }
                 break;
                 
-            case tetris_type.ㅁ: // O 블록
-                shape[0,0] = shape[0,1] = shape[1,0] = shape[1,1] = 1;
+            case tetris_type.ㅁ: 
+                shape[1,1] = shape[1,2] = shape[2,1] = shape[2,2] = 1;
                 break;
                 
-            case tetris_type.ㄹ: // Z 블록
+            case tetris_type.ㄹ: 
                 if(rotation % 2 == 0){
-                    shape[0,0] = shape[0,1] = shape[1,1] = shape[1,2] = 1;
+                    shape[0,3] = shape[1,3] = shape[1,2] = shape[2,2] = 1;
                 } else {
-                    shape[0,1] = shape[1,0] = shape[1,1] = shape[2,0] = 1;
+                    shape[1,2] = shape[1,1] = shape[2,3] = shape[2,2] = 1;
                 }
                 break;
                 
-            case tetris_type.ㅗ: // T 블록
+            case tetris_type.ㅗ: 
                 if(rotation == 0){
-                    shape[0,1] = shape[1,0] = shape[1,1] = shape[1,2] = 1;
+                    shape[0,2] = shape[1,2] = shape[1,3] = shape[2,2] = 1;
                 } else if(rotation == 1){
-                    shape[0,1] = shape[1,1] = shape[1,2] = shape[2,1] = 1;
+                    shape[1,1] = shape[1,2] = shape[1,3] = shape[2,2] = 1;
                 } else if(rotation == 2){
-                    shape[1,0] = shape[1,1] = shape[1,2] = shape[2,1] = 1;
+                    shape[0,2] = shape[1,2] = shape[1,1] = shape[2,2] = 1;
                 } else {
-                    shape[0,1] = shape[1,0] = shape[1,1] = shape[2,1] = 1;
+                    shape[1,1] = shape[1,2] = shape[1,3] = shape[0,2] = 1;
                 }
                 break;
 
-            case tetris_type.reverse_ㄴ:
+            case tetris_type.reverse_ㄴ: // 버그잇슴2
                 if(rotation == 0){
-                    shape[1,0] = shape[1,1] = shape[1,2] = shape[0,2] = 1;
+                    shape[2,3] = shape[0,2] = shape[1,2] = shape[2,2] = 1;
                 } else if(rotation == 1){
-                    shape[0,0] = shape[0,1] = shape[1,1] = shape[2,1] = 1;
+                    shape[2,1] = shape[1,3] = shape[1,2] = shape[1,1] = 1;
                 } else if(rotation == 2){
-                    shape[1,0] = shape[1,1] = shape[1,2] = shape[2,0] = 1;
+                    shape[0,2] = shape[1,2] = shape[2,2] = shape[0,1] = 1;
                 } else {
-                    shape[0,1] = shape[1,1] = shape[2,1] = shape[2,2] = 1;
+                    shape[0,3] = shape[1,1] = shape[1,2] = shape[1,3] = 1;
                 }
                 break;
 
-            case tetris_type.reverse_ㄹ:
+            case tetris_type.reverse_ㄹ: 
                 if(rotation % 2 == 0){
-                    shape[0,1] = shape[0,2] = shape[1,0] = shape[1,1] = 1;
+                    shape[0,2] = shape[1,3] = shape[1,2] = shape[2,3] = 1;
                 } else {
-                    shape[0,0] = shape[1,0] = shape[1,1] = shape[2,1] = 1;
+                    shape[1,2] = shape[1,3] = shape[2,2] = shape[2,1] = 1;
                 }
                 break;
         }
@@ -216,14 +249,10 @@ public class tetris : MonoBehaviour
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 if(shape[i,j] == 1){
-                    int new_x = x + j;
-                    int new_y = y + i;
+                    int new_x = x + i - 1;
+                    int new_y = y + j - 2;
                     
-                    if(new_x < 0 || new_x >= col_max || new_y >= row_max){
-                        return true;
-                    }
-                    
-                    if(new_y >= 0 && board[new_x, new_y, 0] == 1){
+                    if(new_x < 0 || new_x >= col_max  || new_y < 0 || new_y >= row_max){
                         return true;
                     }
                 }
@@ -237,7 +266,8 @@ public class tetris : MonoBehaviour
         int new_y = current_block_position[1] + dy;
         
         if(!is_collision(new_x, new_y, current_block_shape)){
-            block_visual.transform.position = new Vector3(new_x * abs_unit, new_y * abs_unit, 0) + offset;
+            Vector2 target_pos = new Vector2(new_x * abs_unit + offset.x, new_y * abs_unit + offset.y);
+            block_visual.GetComponent<RectTransform>().anchoredPosition = target_pos;
             current_block_position[0] = new_x;
             current_block_position[1] = new_y;
         }
@@ -259,13 +289,17 @@ public class tetris : MonoBehaviour
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 if(current_block_shape[i,j] == 1){
-                    int x = current_block_position[0] + j;
-                    int y = current_block_position[1] + i;
+                    int x = current_block_position[0] + i - 1;
+                    int y = current_block_position[1] + j - 2;
                     
-                    if(x >= 0 && x < col_max && y >= 0 && y < row_max){
-                        board[x, y, 0] = 1;
-                        visual_board[x, y] = Instantiate(zzabari_set[(int)current_block_type].block, new Vector3(x * abs_unit, y * abs_unit, 0) + offset, Quaternion.identity, this.transform);
-                    }
+                    // if(x >= 0 && x < col_max && y >= 0 && y < row_max){
+                    //     // 해당 위치에 현재 블록 타입 번호를 저장
+                        board[x, y] = (int)current_block_type;
+                        if(visual_board[x, y] != null) Destroy(visual_board[x, y]);
+                        visual_board[x, y] = Instantiate(get_zzabari_block(current_block_type), Vector3.zero, Quaternion.identity, target_panel.transform);
+                        Vector2 block_pos = new Vector2(x * abs_unit + offset.x, y * abs_unit + offset.y);
+                        visual_board[x, y].GetComponent<RectTransform>().anchoredPosition = block_pos;
+                    // }
                 }
             }
         }
@@ -302,7 +336,10 @@ public class tetris : MonoBehaviour
             current_block_shape = get_block_shape(current_block_type, block_rotation);
             
             // 비주얼 업데이트
-            block_visual = Instantiate(tetris_set[(int)current_block_type].block, new Vector3(current_block_position[0] * abs_unit, current_block_position[1] * abs_unit, 0) + offset, Quaternion.identity, this.transform);
+            Destroy(block_visual);
+            block_visual = Instantiate(get_tetris_block(current_block_type), Vector3.zero, Quaternion.identity, target_panel.transform);
+            Vector2 hold_pos = new Vector2(current_block_position[0] * abs_unit + offset.x, current_block_position[1] * abs_unit + offset.y);
+            block_visual.GetComponent<RectTransform>().anchoredPosition = hold_pos;
         }
     }
 }

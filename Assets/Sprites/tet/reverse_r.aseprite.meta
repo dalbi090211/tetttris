@@ -125,7 +125,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: reverse_r
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.50943494, y: 0.2397341}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 

@@ -427,38 +427,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94c471ac712861489625b0beb5cfa9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abs_unit: 0.125
-  offset: {x: -1, y: -1, z: 0}
+  target_panel: {fileID: 2044680527}
   tetris_set:
   - type: 0
+    block: {fileID: 0}
+  - type: 1
     block: {fileID: 1601014729862066785, guid: 4e01e0f8fada3b247b33c940298c0c27, type: 3}
-  - type: 1
-    block: {fileID: 2461214188798255900, guid: 432cea236ea3e124b8148da4ac234f10, type: 3}
   - type: 5
-    block: {fileID: 1667732184468520951, guid: fa7a5c6fa5389e64dbc1e0d427cb685f, type: 3}
-  - type: 3
-    block: {fileID: 7211585187208152995, guid: 098e83ae45a6eb041b156169c27f5190, type: 3}
-  - type: 6
-    block: {fileID: 5422962912732516358, guid: 9a523ca360dc49742b5cfb545413b3f9, type: 3}
-  - type: 2
-    block: {fileID: 8655674940978422635, guid: 474ab058902b6404b8af4a024b2b7091, type: 3}
-  - type: 4
     block: {fileID: 7750342475256602954, guid: c53890c81b6cfcc42bda6bbdabe3c8b4, type: 3}
-  zzabari_set:
-  - type: 0
-    block: {fileID: 19841715894032296, guid: 846fe661c1b36524880c981edff02136, type: 3}
-  - type: 1
-    block: {fileID: 5276397641243763580, guid: f15ecc74d56f3de4c8815c551b9b8780, type: 3}
-  - type: 5
-    block: {fileID: 4305135732745447417, guid: b362baf6d4bbbb04897e8e7c6726510c, type: 3}
   - type: 3
-    block: {fileID: 34909380659750489, guid: 8d1da430d1fc92848beb3c5f16f953f3, type: 3}
+    block: {fileID: 8655674940978422635, guid: 474ab058902b6404b8af4a024b2b7091, type: 3}
   - type: 6
-    block: {fileID: 3035824440845896696, guid: 1a82ae5876cbd774e9d7e83c7a16a558, type: 3}
+    block: {fileID: 1667732184468520951, guid: fa7a5c6fa5389e64dbc1e0d427cb685f, type: 3}
   - type: 2
-    block: {fileID: 7900658816219919233, guid: 34b48396933fb4b42b1c9a9a6bbed3ef, type: 3}
+    block: {fileID: 2461214188798255900, guid: 432cea236ea3e124b8148da4ac234f10, type: 3}
   - type: 4
+    block: {fileID: 7211585187208152995, guid: 098e83ae45a6eb041b156169c27f5190, type: 3}
+  - type: 7
+    block: {fileID: 5422962912732516358, guid: 9a523ca360dc49742b5cfb545413b3f9, type: 3}
+  zzabari_set:
+  - type: 1
+    block: {fileID: 19841715894032296, guid: 846fe661c1b36524880c981edff02136, type: 3}
+  - type: 2
+    block: {fileID: 5276397641243763580, guid: f15ecc74d56f3de4c8815c551b9b8780, type: 3}
+  - type: 6
+    block: {fileID: 4305135732745447417, guid: b362baf6d4bbbb04897e8e7c6726510c, type: 3}
+  - type: 4
+    block: {fileID: 34909380659750489, guid: 8d1da430d1fc92848beb3c5f16f953f3, type: 3}
+  - type: 7
+    block: {fileID: 3035824440845896696, guid: 1a82ae5876cbd774e9d7e83c7a16a558, type: 3}
+  - type: 3
+    block: {fileID: 7900658816219919233, guid: 34b48396933fb4b42b1c9a9a6bbed3ef, type: 3}
+  - type: 5
     block: {fileID: 6561974030585047791, guid: 5435dcac7d8e9b64886c82fe45c4e998, type: 3}
+  - type: 0
+    block: {fileID: 0}
 --- !u!1 &289089981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2968,21 +2971,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2044680528
-Transform:
+--- !u!224 &2044680528
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044680527}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.048, y: 0.169, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 138006825}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.175, y: 1.012}
+  m_SizeDelta: {x: 1.40625, y: 1.6875}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &2044680529
 SpriteRenderer:
   m_ObjectHideFlags: 0
