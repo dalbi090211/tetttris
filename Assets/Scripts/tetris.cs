@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public enum tetris_type{
     None = 0,
@@ -23,6 +24,11 @@ public class tetris : MonoBehaviour
 {
     //비쥬얼 업데이트
     [SerializeField] private GameObject target_panel;
+    [SerializeField] private GameObject hold_panel;
+    [SerializeField] private GameObject next1_panel;
+    [SerializeField] private GameObject next2_panel;
+    [SerializeField] private GameObject next3_panel;
+    
     private float abs_unit;
     private Vector3 offset;
     private GameObject block_visual;    //현재 쥐고 있는 블록
@@ -45,10 +51,16 @@ public class tetris : MonoBehaviour
     private int[,] current_block_shape; // 현재 블록 모양
     private int block_rotation; // 현재 블록 회전 상태
     private int[] last_block_position;
+    private int[] complete_block_shapes;
     
     // 홀드 시스템
     private tetris_type? held_block_type; // 홀드된 블록 (null 가능)
     private bool can_hold; // 홀드 가능 여부
+    private GameObject held_block_visual; // 홀드된 블록의 시각적 표현
+    
+    // Next 블록 시스템
+    private GameObject[] next_block_visuals; // 다음 블록들의 시각적 표현
+    private int next_display_count = 3; // 표시할 다음 블록 개수
     
     // 테트리스 블럭정보
     [SerializeField] private List<tetris_set> tetris_set;
@@ -69,6 +81,7 @@ public class tetris : MonoBehaviour
         random = new System.Random();
         current_type = start_type;
         board = new int[col_max, row_max];
+        next_block_visuals = new GameObject[next_display_count];
         board_init();
     }
 
@@ -110,9 +123,20 @@ public class tetris : MonoBehaviour
         last_block_position = new int[2] {col_max / 2, row_max/2};
         held_block_type = null; // 홀드 시스템 초기화
         can_hold = true;
+        held_block_visual = null;
+        
+        // Next 블록 시각적 요소 초기화
+        for(int i = 0; i < next_display_count; i++){
+            if(next_block_visuals[i] != null){
+                Destroy(next_block_visuals[i]);
+                next_block_visuals[i] = null;
+            }
+        }
+        
         board_reset();
         list_reset();
         spawn_new_block();
+        update_next_blocks_display();
     }
 
     private void board_reset(){
@@ -165,12 +189,14 @@ public class tetris : MonoBehaviour
         block_rotation = 0;
         current_block_shape = get_block_shape(current_block_type, block_rotation);
         current_block_position = block_revision(current_block_position[0], current_block_position[1], current_block_shape);
+        
         // (0,0,0)에 생성한 다음 RectTransform으로 위치 조정
         block_visual = Instantiate(get_tetris_block(current_block_type), Vector3.zero, Quaternion.identity, target_panel.transform);
         Vector2 target_pos = new Vector2(current_block_position[0] * abs_unit + offset.x, current_block_position[1] * abs_unit + offset.y);
         block_visual.GetComponent<RectTransform>().anchoredPosition = target_pos;
         
         can_hold = true; // 새 블록이 나올 때마다 홀드 가능
+        update_next_blocks_display(); // Next 블록 표시 업데이트
     }
 
     private int[] block_revision(int x, int y, int[,] shape){
@@ -321,24 +347,51 @@ public class tetris : MonoBehaviour
 
     private void place_block(){
         // 블록을 보드에 고정
+        complete_block_shapes = new int[8];
+        HashSet<int> affected_rows = new HashSet<int>();
+        HashSet<int> affected_cols = new HashSet<int>();
+        
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 if(current_block_shape[i,j] == 1){
                     int x = current_block_position[0] + i - 1;
                     int y = current_block_position[1] + j - 2;
+            
+                    board[x, y] = (int)current_block_type;
+                    if(visual_board[x, y] != null) {
+                        BattleManager.instance.player_overlap(1);
+                        Destroy(visual_board[x, y]);
+                    }
+                    visual_board[x, y] = Instantiate(get_zzabari_block(current_block_type), Vector3.zero, Quaternion.identity, target_panel.transform);
+                    Vector2 block_pos = new Vector2(x * abs_unit + offset.x, y * abs_unit + offset.y);
+                    visual_board[x, y].GetComponent<RectTransform>().anchoredPosition = block_pos;
                     
-                    // if(x >= 0 && x < col_max && y >= 0 && y < row_max){
-                    //     // 해당 위치에 현재 블록 타입 번호를 저장
-                        board[x, y] = (int)current_block_type;
-                        if(visual_board[x, y] != null) Destroy(visual_board[x, y]);
-                        visual_board[x, y] = Instantiate(get_zzabari_block(current_block_type), Vector3.zero, Quaternion.identity, target_panel.transform);
-                        Vector2 block_pos = new Vector2(x * abs_unit + offset.x, y * abs_unit + offset.y);
-                        visual_board[x, y].GetComponent<RectTransform>().anchoredPosition = block_pos;
-                    // }
+                    // 영향을 받은 행과 열 기록
+                    affected_rows.Add(y);
+                    affected_cols.Add(x);
                 }
             }
         }
         
+
+        // 완성된 줄 확인 및 제거
+        foreach(int row in affected_rows){
+            if(is_row_complete(row)){
+                clear_row(row);
+            }
+        }
+        
+        foreach(int col in affected_cols){
+            if(is_col_complete(col)){
+                clear_col(col);
+            }
+        }
+        
+        //debug용, 실구현에서는 블록 조합을 넘겨줘야함
+        if(complete_block_shapes.Sum() > 0){
+            BattleManager.instance.player_attack(complete_block_shapes);    
+        }
+
         if(block_visual != null){
             Destroy(block_visual);
         }
@@ -359,6 +412,7 @@ public class tetris : MonoBehaviour
             // 아무것도 홀드되지 않았다면 현재 블록을 홀드하고 새 블록 스폰
             held_block_type = current_block_type;
             Destroy(block_visual);
+            update_hold_block_display(); // 홀드 블록 표시 업데이트
             spawn_new_block();
         } else {
             // 이미 홀드된 블록이 있다면 서로 교체
@@ -375,6 +429,104 @@ public class tetris : MonoBehaviour
             block_visual = Instantiate(get_tetris_block(current_block_type), Vector3.zero, Quaternion.identity, target_panel.transform);
             Vector2 hold_pos = new Vector2(current_block_position[0] * abs_unit + offset.x, current_block_position[1] * abs_unit + offset.y);
             block_visual.GetComponent<RectTransform>().anchoredPosition = hold_pos;
+            
+            update_hold_block_display(); // 홀드 블록 표시 업데이트
+        }
+    }
+    
+    // 행이 완성되었는지 확인
+    private bool is_row_complete(int row){
+        for(int x = 0; x < col_max; x++){
+            if(board[x, row] == (int)tetris_type.None){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    // 열이 완성되었는지 확인
+    private bool is_col_complete(int col){
+        for(int y = 0; y < row_max; y++){
+            if(board[col, y] == (int)tetris_type.None){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    // 완성된 행 제거
+    private void clear_row(int row){
+        // 비주얼 오브젝트 제거
+        for(int x = 0; x < col_max; x++){
+            if(visual_board[x, row] != null){
+                Destroy(visual_board[x, row]);
+                visual_board[x, row] = null;
+            }
+        }
+        
+        // 보드 데이터 제거
+        for(int x = 0; x < col_max; x++){
+            complete_block_shapes[board[x, row]]++;
+            board[x, row] = (int)tetris_type.None;
+        }
+    }
+    
+    // 완성된 열 제거
+    private void clear_col(int col){
+        // 비주얼 오브젝트 제거
+        for(int y = 0; y < row_max; y++){
+            if(visual_board[col, y] != null){
+                Destroy(visual_board[col, y]);
+                visual_board[col, y] = null;
+            }
+        }
+        
+        // 보드 데이터 제거
+        for(int y = 0; y < row_max; y++){
+            complete_block_shapes[board[col, y]]++;
+            board[col, y] = (int)tetris_type.None;
+        }
+    }
+    
+    // 홀드 블록 표시 업데이트
+    private void update_hold_block_display(){
+        // 기존 홀드 블록 제거
+        if(held_block_visual != null){
+            Destroy(held_block_visual);
+            held_block_visual = null;
+        }
+        
+        // 홀드된 블록이 있으면 표시
+        if(held_block_type.HasValue){
+            held_block_visual = Instantiate(get_tetris_block(held_block_type.Value), Vector3.zero, Quaternion.identity, hold_panel.transform);
+            held_block_visual.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        }
+    }
+    
+    // Next 블록들 표시 업데이트
+    private void update_next_blocks_display(){
+        // 기존 next 블록들 제거
+        for(int i = 0; i < next_display_count; i++){
+            if(next_block_visuals[i] != null){
+                Destroy(next_block_visuals[i]);
+                next_block_visuals[i] = null;
+            }
+        }
+        
+        // current_list가 부족하면 리셋
+        if(current_index + next_display_count > current_list.Count){
+            list_reset();
+        }
+        
+        // current_list에서 다음 블록들 표시
+        GameObject[] panels = {next1_panel, next2_panel, next3_panel};
+        for(int i = 0; i < next_display_count; i++){
+            int next_index = current_index + i;
+            if(next_index < current_list.Count){
+                tetris_type next_type = current_list[next_index];
+                next_block_visuals[i] = Instantiate(get_tetris_block(next_type), Vector3.zero, Quaternion.identity, panels[i].transform);
+                next_block_visuals[i].GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            }
         }
     }
 }
