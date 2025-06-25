@@ -164,13 +164,38 @@ public class tetris : MonoBehaviour
         current_block_position = new int[2] {last_block_position[0], last_block_position[1]};
         block_rotation = 0;
         current_block_shape = get_block_shape(current_block_type, block_rotation);
-        
+        current_block_position = block_revision(current_block_position[0], current_block_position[1], current_block_shape);
         // (0,0,0)에 생성한 다음 RectTransform으로 위치 조정
         block_visual = Instantiate(get_tetris_block(current_block_type), Vector3.zero, Quaternion.identity, target_panel.transform);
         Vector2 target_pos = new Vector2(current_block_position[0] * abs_unit + offset.x, current_block_position[1] * abs_unit + offset.y);
         block_visual.GetComponent<RectTransform>().anchoredPosition = target_pos;
         
         can_hold = true; // 새 블록이 나올 때마다 홀드 가능
+    }
+
+    private int[] block_revision(int x, int y, int[,] shape){
+        int[] new_position = new int[2] {x, y};
+        for(int i = 3; i > -1; i--){
+            for(int j = 3; j > -1; j--){
+                if(shape[i,j] == 1){
+                    int new_x = new_position[0] + i - 1;
+                    int new_y = new_position[1] + j - 2;
+                    if(new_x < 0){
+                        new_position[0] -= new_x;
+                    }
+                    if(new_y < 0){
+                        new_position[1] -= new_y;
+                    }
+                    if(new_x > col_max-1){
+                        new_position[0] -= new_x - (col_max-1);
+                    }
+                    if(new_y > row_max-1){
+                        new_position[1] -= new_y - (row_max-1);
+                    }
+                }
+            }
+        }
+        return new_position;
     }
 
     private int[,] get_block_shape(tetris_type type, int rotation){
@@ -185,15 +210,15 @@ public class tetris : MonoBehaviour
                 }
                 break;
                 
-            case tetris_type.ㄴ: // 버그잇슴슴
+            case tetris_type.ㄴ: // 버그잇슴
                 if(rotation == 0){
                     shape[0,3] = shape[0,2] = shape[1,2] = shape[2,2] = 1;
                 } else if(rotation == 1){
-                    shape[2,3] = shape[1,3] = shape[1,2] = shape[1,1] = 1;
+                    shape[0,1] = shape[1,3] = shape[1,2] = shape[1,1] = 1;
                 } else if(rotation == 2){
                     shape[0,2] = shape[1,2] = shape[2,2] = shape[2,1] = 1;
                 } else {
-                    shape[0,1] = shape[1,1] = shape[1,2] = shape[1,3] = 1;
+                    shape[2,3] = shape[1,1] = shape[1,2] = shape[1,3] = 1;
                 }
                 break;
                 
@@ -202,10 +227,14 @@ public class tetris : MonoBehaviour
                 break;
                 
             case tetris_type.ㄹ: 
-                if(rotation % 2 == 0){
-                    shape[0,3] = shape[1,3] = shape[1,2] = shape[2,2] = 1;
+                if(rotation == 0){
+                    shape[1,2] = shape[0,3] = shape[1,3] = shape[2,2] = 1;
+                } else if(rotation == 1){
+                    shape[1,3] = shape[0,2] = shape[1,2] = shape[0,1] = 1;
+                } else if(rotation == 2){
+                    shape[1,1] = shape[0,2] = shape[1,2] = shape[2,1] = 1;
                 } else {
-                    shape[1,2] = shape[1,1] = shape[2,3] = shape[2,2] = 1;
+                    shape[2,3] = shape[1,2] = shape[2,2] = shape[1,1] = 1;
                 }
                 break;
                 
@@ -213,11 +242,11 @@ public class tetris : MonoBehaviour
                 if(rotation == 0){
                     shape[0,2] = shape[1,2] = shape[1,3] = shape[2,2] = 1;
                 } else if(rotation == 1){
-                    shape[1,1] = shape[1,2] = shape[1,3] = shape[2,2] = 1;
+                    shape[1,1] = shape[1,2] = shape[1,3] = shape[0,2] = 1;
                 } else if(rotation == 2){
                     shape[0,2] = shape[1,2] = shape[1,1] = shape[2,2] = 1;
                 } else {
-                    shape[1,1] = shape[1,2] = shape[1,3] = shape[0,2] = 1;
+                    shape[1,1] = shape[1,2] = shape[1,3] = shape[2,2] = 1;
                 }
                 break;
 
@@ -225,19 +254,23 @@ public class tetris : MonoBehaviour
                 if(rotation == 0){
                     shape[2,3] = shape[0,2] = shape[1,2] = shape[2,2] = 1;
                 } else if(rotation == 1){
-                    shape[2,1] = shape[1,3] = shape[1,2] = shape[1,1] = 1;
+                    shape[0,3] = shape[1,3] = shape[1,2] = shape[1,1] = 1;
                 } else if(rotation == 2){
                     shape[0,2] = shape[1,2] = shape[2,2] = shape[0,1] = 1;
                 } else {
-                    shape[0,3] = shape[1,1] = shape[1,2] = shape[1,3] = 1;
+                    shape[2,1] = shape[1,1] = shape[1,2] = shape[1,3] = 1;
                 }
                 break;
 
             case tetris_type.reverse_ㄹ: 
-                if(rotation % 2 == 0){
-                    shape[0,2] = shape[1,3] = shape[1,2] = shape[2,3] = 1;
+                if(rotation == 0){
+                    shape[1,2] = shape[0,2] = shape[1,3] = shape[2,3] = 1;
+                } else if(rotation == 1){
+                    shape[0,3] = shape[0,2] = shape[1,2] = shape[1,1] = 1;
+                } else if(rotation == 2){
+                    shape[0,1] = shape[1,1] = shape[1,2] = shape[2,2] = 1;
                 } else {
-                    shape[1,2] = shape[1,3] = shape[2,2] = shape[2,1] = 1;
+                    shape[1,3] = shape[1,2] = shape[2,2] = shape[2,1] = 1;
                 }
                 break;
         }
@@ -252,7 +285,7 @@ public class tetris : MonoBehaviour
                     int new_x = x + i - 1;
                     int new_y = y + j - 2;
                     
-                    if(new_x < 0 || new_x >= col_max  || new_y < 0 || new_y >= row_max){
+                    if(new_x < 0 || new_x > col_max-1  || new_y < 0 || new_y > row_max-1){
                         return true;
                     }
                 }
@@ -277,11 +310,13 @@ public class tetris : MonoBehaviour
         int new_rotation = (block_rotation + 1) % 4;
         int[,] new_shape = get_block_shape(current_block_type, new_rotation);
         
-        if(!is_collision(current_block_position[0], current_block_position[1], new_shape)){
-            block_visual.transform.rotation = Quaternion.Euler(0, 0, new_rotation * 90);
-            block_rotation = new_rotation;
-            current_block_shape = new_shape;
+        if(is_collision(current_block_position[0], current_block_position[1], new_shape)){
+            current_block_position = block_revision(current_block_position[0], current_block_position[1], new_shape);
+            block_visual.GetComponent<RectTransform>().anchoredPosition = new Vector2(current_block_position[0] * abs_unit + offset.x, current_block_position[1] * abs_unit + offset.y);
         }
+        block_visual.transform.rotation = Quaternion.Euler(0, 0, new_rotation * 90);
+        block_rotation = new_rotation;
+        current_block_shape = new_shape;
     }
 
     private void place_block(){
