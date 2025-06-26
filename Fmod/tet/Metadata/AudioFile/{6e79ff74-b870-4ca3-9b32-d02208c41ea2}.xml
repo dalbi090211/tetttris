@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{6e79ff74-b870-4ca3-9b32-d02208c41ea2}">
+		<property name="assetPath">
+			<value>Music/A Hollow Darkness - Cave.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>132.97297916666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b12717de-c573-4d47-8d4b-ea7f216001d1}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -5,18 +5,19 @@ using UnityEngine.PlayerLoop;
 using System.Collections.Generic;
 
 public enum BGMArea{
-    Unset = -1,
-    GrayTown = 0,
-    Casino = 1,
-    Boss_Greed = 2
+    Shop = 0,
+    Scene1 = 1,
+    Scene2 = 2,
+    Scene3 = 3
+
 }
 
 public class SoundManager : MonoBehaviour {
     public static SoundManager instance;
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
-    private EventInstance ambienceEventInstance;
-    private EventInstance musicEventInstance;
+    private EventInstance BGMInstance;
+    private BGMArea currentBGM;
     
     void Awake()
     {
@@ -25,22 +26,17 @@ public class SoundManager : MonoBehaviour {
             instance = this;
             eventInstances = new List<EventInstance>();
             eventEmitters = new List<StudioEventEmitter>();
+        }
+        else{
+            Destroy(gameObject);
+        }
+    }
 
-            if (!musicEventInstance.isValid())
-            {
-                musicEventInstance = CreateInstance(FmodEvents.instance.TotalBGM);
-                musicEventInstance.start();
-            }
-            else
-            {
-                FMOD.Studio.PLAYBACK_STATE state;
-                musicEventInstance.getPlaybackState(out state);
-                if (state != FMOD.Studio.PLAYBACK_STATE.PLAYING)
-                {
-                    musicEventInstance.start();
-                }
-            }
-            DontDestroyOnLoad(gameObject);
+    void Start()
+    {
+        // FmodEvents가 초기화된 후에 BGM 인스턴스 생성
+        if(!BGMInstance.isValid() && FmodEvents.instance != null){
+            createBGMInstance(FmodEvents.instance.TotalBGM);
         }
     }
 
@@ -49,12 +45,12 @@ public class SoundManager : MonoBehaviour {
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
 
-    public void initializeAmbience(EventReference ambienceEventReference){
-        ambienceEventInstance = CreateInstance(ambienceEventReference);
-        ambienceEventInstance.start();
-    }
+    // public void initializeAmbience(EventReference ambienceEventReference){
+    //     ambienceEventInstance = CreateInstance(ambienceEventReference);
+    //     ambienceEventInstance.start();
+    // }
 
-    private EventInstance CreateInstance(EventReference eventReference){ 
+    public EventInstance CreateInstance(EventReference eventReference){ 
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
         eventInstances.Add(eventInstance);
         return eventInstance;
@@ -64,7 +60,6 @@ public class SoundManager : MonoBehaviour {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
         eventInstance.setPitch(pitch);
         eventInstance.start();
-        eventInstance.release();
     }
 
     private StudioEventEmitter InitializeEventEmitter(EventReference eventReference, GameObject emitterGameObject){
@@ -74,32 +69,50 @@ public class SoundManager : MonoBehaviour {
         return emitter;
     }
 
-    public void SetAmbienceParameter(string parameterName, float parameterValue){
-        ambienceEventInstance.setParameterByName(parameterName, parameterValue);
+    public void SetBGMParameter(BGMArea area){
+        BGMInstance.setParameterByName("Scene", (float)area);
+    }
+
+    public void createBGMInstance(EventReference eventReference){
+        if(!BGMInstance.isValid()){
+            BGMInstance = CreateInstance(eventReference);
+            BGMInstance.setParameterByName("Scene", (float)BGMArea.Scene1);
+            currentBGM = BGMArea.Scene1;
+            BGMInstance.start();
+        }
     }
 
     public void SetBGM(BGMArea area)
     {
-        Debug.Log("isValid : " + musicEventInstance.isValid());
-        Debug.Log("curMusic : " + musicEventInstance.isValid());
+        Debug.Log("isValid : " + BGMInstance.isValid());
+        Debug.Log("curMusic : " + BGMInstance.isValid());
+
+        if(currentBGM == area){
+            return;
+        }
 
         // 기존 BGM 정리
-        if (musicEventInstance.isValid())
+        if (BGMInstance.isValid())
         {
-            musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            musicEventInstance.release();
+            BGMInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            BGMInstance.release();
         }
 
         // 새 인스턴스 생성 및 재생
         // musicEventInstance = CreateInstance(FmodEvents.instance.TotalBGM);
-        musicEventInstance.setParameterByName("area", (float)area);
-        musicEventInstance.start();
+        BGMInstance.setParameterByName("Scene", (float)area);
+        BGMInstance.start();
     }
     
     public BGMArea GetCurBGM(){
         float areaValue;
-        musicEventInstance.getParameterByName("area", out areaValue);
+        BGMInstance.getParameterByName("Scene", out areaValue);
         return (BGMArea)areaValue;
+    }
+
+    public void stopBGM(){
+        BGMInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        BGMInstance.release();
     }
 
     // void OnDestroy() {

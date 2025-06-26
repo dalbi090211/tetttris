@@ -700,3 +700,6 @@ PlayerSettings:
   insecureHttpOption: 0
   androidVulkanDenyFilterList: []
   androidVulkanAllowFilterList: []
+  scriptExecutionOrder:
+    FmodEvents: -100
+    SoundManager: -99

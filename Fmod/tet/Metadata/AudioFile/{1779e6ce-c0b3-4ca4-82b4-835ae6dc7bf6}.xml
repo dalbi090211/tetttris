@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1779e6ce-c0b3-4ca4-82b4-835ae6dc7bf6}">
+		<property name="assetPath">
+			<value>Music/Red Leaf Town - rest area.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>122.79070833333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b12717de-c573-4d47-8d4b-ea7f216001d1}</destination>
+		</relationship>
+	</object>
+</objects>

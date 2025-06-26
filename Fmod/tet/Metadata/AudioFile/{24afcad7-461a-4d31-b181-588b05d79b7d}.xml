@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{24afcad7-461a-4d31-b181-588b05d79b7d}">
+		<property name="assetPath">
+			<value>Music/The Beast's Lair - Boss Fight.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>120</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b12717de-c573-4d47-8d4b-ea7f216001d1}</destination>
+		</relationship>
+	</object>
+</objects>

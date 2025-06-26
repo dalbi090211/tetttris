@@ -47,7 +47,7 @@ public class BattleManager : MonoBehaviour
 
         //debug용
         stage_hp -= 2000;
-
+        SceneMoveManager.instance.updateBossHp();
         if(stage_hp <= 0){  //죽기 전에 깨면 ok
             winBattle();
         }
