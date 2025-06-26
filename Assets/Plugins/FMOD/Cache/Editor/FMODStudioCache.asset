@@ -104,7 +104,7 @@ MonoBehaviour:
   Path: Fmod/tet/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638865459419391130
+  lastModified: 638865805213861263
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -124,7 +124,7 @@ MonoBehaviour:
   Path: Fmod/tet/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638865459419413853
+  lastModified: 638865805213871264
   FileSizes:
   - Name: Desktop
     Value: 954
@@ -182,7 +182,7 @@ MonoBehaviour:
   - {fileID: -2553365081434539159}
   StringsBanks:
   - {fileID: -1333169595757136180}
-  cacheTime: 638865505585954103
+  cacheTime: 638865805214259429
   cacheVersion: 131625
 --- !u!114 &1536058014281506174
 MonoBehaviour:
@@ -274,7 +274,7 @@ MonoBehaviour:
   Path: Fmod/tet/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638865459442216244
+  lastModified: 638865805214259429
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -294,7 +294,7 @@ MonoBehaviour:
   Path: Fmod/tet/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638865505585954103
+  lastModified: 638865805214259429
   FileSizes:
   - Name: Desktop
     Value: 6854976
