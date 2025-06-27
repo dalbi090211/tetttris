@@ -3,6 +3,9 @@ using FMODUnity;
 using FMOD.Studio;
 using UnityEngine.PlayerLoop;
 using System.Collections.Generic;
+using System.Collections;
+using Cysharp.Threading.Tasks;
+using System;
 
 public enum BGMArea{
     Shop = 0,
@@ -45,6 +48,18 @@ public class SoundManager : MonoBehaviour {
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
 
+    public async UniTask PlaySoundStopBGM(EventReference sound, Vector3 worldPos, float sound_duration){
+        Debug.Log("PlaySoundStopBGM 시작");
+        StopBGM();
+        EventInstance soundInstance = RuntimeManager.CreateInstance(sound);
+        soundInstance.start();
+        await UniTask.Delay(TimeSpan.FromSeconds(sound_duration));
+        soundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        soundInstance.release();
+        ResumeBGM();
+        Debug.Log("PlaySoundStopBGM 완료");
+    }
+
     // public void initializeAmbience(EventReference ambienceEventReference){
     //     ambienceEventInstance = CreateInstance(ambienceEventReference);
     //     ambienceEventInstance.start();
@@ -80,6 +95,14 @@ public class SoundManager : MonoBehaviour {
             currentBGM = BGMArea.Scene1;
             BGMInstance.start();
         }
+    }
+
+    public void StopBGM(){
+        BGMInstance.setPaused(true);
+    }
+
+    public void ResumeBGM(){
+        BGMInstance.setPaused(false);
     }
 
     public void SetBGM(BGMArea area)

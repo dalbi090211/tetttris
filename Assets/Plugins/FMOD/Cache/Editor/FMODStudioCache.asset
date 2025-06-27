@@ -104,7 +104,7 @@ MonoBehaviour:
   Path: Fmod/tet/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638865805213861263
+  lastModified: 638866406042546531
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -124,11 +124,38 @@ MonoBehaviour:
   Path: Fmod/tet/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638865805213871264
+  lastModified: 638866406042563674
   FileSizes:
   - Name: Desktop
-    Value: 954
+    Value: 1106
   Exists: 1
+--- !u!114 &-1175247515557025913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/GameLose
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/GameLose
+  Guid:
+    Data1: -1795107561
+    Data2: 1093622654
+    Data3: -653047421
+    Data4: 800004901
+  Banks:
+  - {fileID: 7019615672786460131}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6060
 --- !u!114 &-991657631808471988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,12 +204,15 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 6144377241099231199}
   - {fileID: -991657631808471988}
+  - {fileID: -1175247515557025913}
+  - {fileID: 3828847556305388137}
+  - {fileID: 7180636729890537643}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2553365081434539159}
   StringsBanks:
   - {fileID: -1333169595757136180}
-  cacheTime: 638865805214259429
+  cacheTime: 638866406044433207
   cacheVersion: 131625
 --- !u!114 &1536058014281506174
 MonoBehaviour:
@@ -232,6 +262,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 494
   Exists: 1
+--- !u!114 &3828847556305388137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PlayerAtk
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/PlayerAtk
+  Guid:
+    Data1: 1550105210
+    Data2: 1294081113
+    Data3: -933600066
+    Data4: -55605465
+  Banks:
+  - {fileID: 7019615672786460131}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 240
 --- !u!114 &6144377241099231199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,11 +331,38 @@ MonoBehaviour:
   Path: Fmod/tet/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638865805214259429
+  lastModified: 638866406044433207
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 134304
   Exists: 1
+--- !u!114 &7180636729890537643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/GameWin
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/GameWin
+  Guid:
+    Data1: -373429076
+    Data2: 1283124177
+    Data3: -1851358575
+    Data4: 2021638376
+  Banks:
+  - {fileID: 7019615672786460131}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5500
 --- !u!114 &7635853388857049769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +378,7 @@ MonoBehaviour:
   Path: Fmod/tet/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638865805214259429
+  lastModified: 638865505585954103
   FileSizes:
   - Name: Desktop
     Value: 6854976

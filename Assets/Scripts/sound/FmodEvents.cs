@@ -7,6 +7,11 @@ public class FmodEvents : MonoBehaviour {    //객체보단 구조체에 가까�
     [SerializeField] public EventReference TitleBGM;
 
     [field : Header("SFX")]
+    [SerializeField] public EventReference PlayerAttack;
+    [SerializeField] public EventReference Win;
+    [SerializeField] public EventReference Lose;
+
+    [field : Header("Ambience")]
     
 
     public static FmodEvents instance;

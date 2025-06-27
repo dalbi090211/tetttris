@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +34,8 @@ public class tetris : MonoBehaviour
     private Vector3 offset;
     private GameObject block_visual;    //현재 쥐고 있는 블록
     private GameObject[,] visual_board; //현재 보드의 모든 칸 오브젝트
+    private Boolean canMove = false;
+    private Boolean is_combo = false;
 
     // 초기설정용 상수
     private int col_max = 8;
@@ -77,16 +80,18 @@ public class tetris : MonoBehaviour
     {
         abs_unit = target_panel.GetComponent<RectTransform>().rect.width / (col_max+2);
         Debug.Log("abs : " + abs_unit);
+        col_max += 2;   //technologia
         offset = new Vector3(-col_max/2*abs_unit+abs_unit/2, -row_max/2*abs_unit+abs_unit/2, 0); // RectTransform을 사용할 것이므로 offset은 0으로 설정
         random = new System.Random();
         current_type = start_type;
         board = new int[col_max, row_max];
         next_block_visuals = new GameObject[next_display_count];
-        board_init();
+        // board_init();
     }
 
     private void Update()
     {
+        if(!canMove) return;
         // 자동 낙하
         fall_timer += Time.deltaTime;
         if(fall_timer >= fall_speed)
@@ -118,7 +123,15 @@ public class tetris : MonoBehaviour
         }
     }
 
-    private void board_init(){
+    public void tetris_start(){
+        canMove = true;
+    }
+
+    public void tetris_stop(){
+        canMove = false;
+    }
+
+    public void board_init(){
         visual_board = new GameObject[col_max, row_max];
         last_block_position = new int[2] {col_max / 2, row_max/2};
         held_block_type = null; // 홀드 시스템 초기화
@@ -137,6 +150,25 @@ public class tetris : MonoBehaviour
         list_reset();
         spawn_new_block();
         update_next_blocks_display();
+    }
+
+    public void tetris_reset(){
+        visual_reset();
+        board_reset();
+        list_reset();
+        Destroy(next_block_visuals[0]);
+        Destroy(next_block_visuals[1]);
+        Destroy(next_block_visuals[2]);
+        Destroy(block_visual);
+        Destroy(held_block_visual);
+    }
+
+    public void visual_reset(){
+        for(int x = 0; x < col_max; x++){
+            for(int y = 0; y < row_max; y++){
+                Destroy(visual_board[x, y]);
+            }
+        }
     }
 
     private void board_reset(){
@@ -333,8 +365,24 @@ public class tetris : MonoBehaviour
     }
 
     private void rotate_block(){
+        if(current_block_type == tetris_type.ㅣ){   //ㅣ자 블록의 회전을 구현하려면 4,4 행렬을 5,5로 바꿔야해서 일단 막아둠.
+            int i_rotation = (block_rotation == 0) ? 1 : 0;
+            int[,] i_shape = get_block_shape(current_block_type, i_rotation);
+            
+            if(is_collision(current_block_position[0], current_block_position[1], i_shape)){
+                current_block_position = block_revision(current_block_position[0], current_block_position[1], i_shape);
+                block_visual.GetComponent<RectTransform>().anchoredPosition = new Vector2(current_block_position[0] * abs_unit + offset.x, current_block_position[1] * abs_unit + offset.y);
+            }
+            block_visual.transform.rotation = Quaternion.Euler(0, 0, i_rotation * 90);
+            block_rotation = i_rotation;
+            current_block_shape = i_shape;
+            return;
+        }
+        
         int new_rotation = (block_rotation + 1) % 4;
         int[,] new_shape = get_block_shape(current_block_type, new_rotation);
+
+        
         
         if(is_collision(current_block_position[0], current_block_position[1], new_shape)){
             current_block_position = block_revision(current_block_position[0], current_block_position[1], new_shape);
@@ -372,7 +420,6 @@ public class tetris : MonoBehaviour
                 }
             }
         }
-        
 
         // 완성된 줄 확인 및 제거
         foreach(int row in affected_rows){
@@ -387,9 +434,14 @@ public class tetris : MonoBehaviour
             }
         }
         
-        //debug용, 실구현에서는 블록 조합을 넘겨줘야함
         if(complete_block_shapes.Sum() > 0){
-            BattleManager.instance.player_attack(complete_block_shapes);    
+            if(BattleManager.instance.player_attack(complete_block_shapes, is_combo)){
+                return;
+            }
+            is_combo = true;
+        }
+        else{
+            is_combo = false;
         }
 
         if(block_visual != null){

@@ -17,6 +17,7 @@ public class SceneMoveManager : MonoBehaviour
 
     //================================ player =================================
     [SerializeField] private Animator playerAnimator;
+    [SerializeField] private tetris tetris;
 
     //================================ scene1 =================================
     [SerializeField] private string scene1_boss_name;
@@ -92,30 +93,32 @@ public class SceneMoveManager : MonoBehaviour
 
     public void startFight(int scene_num){
         BattleManager.instance.setBattle(scene_num);
+        tetris.tetris_start();
+        tetris.board_init();
         switch(scene_num){
             case 1:
-                playerAnimator.Play("HeroKnight_Attack1");  //공격 시에만 들어갈수도?
+                // playerAnimator.Play("HeroKnight_Attack1");  //공격 시에만 들어갈수도?
                 scene1_goblin.Play("goatk1");
                 scene1_mushroom.Play("mushatk1");
                 scene1_skeleton.Play("skeletonatk1");
                 boss_name_text.text = scene1_boss_name;
                 break;
             case 2:
-                playerAnimator.Play("HeroKnight_Attack1");
+                // playerAnimator.Play("HeroKnight_Attack1");
                 scene2_sword.Play("sword_atk1");
                 scene2_spear.Play("spear_atk1");
                 scene2_bow.Play("bow_atk1");
                 boss_name_text.text = scene2_boss_name;
                 break;
             case 3:
-                playerAnimator.Play("HeroKnight_Attack1");
+                // playerAnimator.Play("HeroKnight_Attack1");
                 scene3_mage1.Play("mage_atk1");
                 scene3_ehero.Play("ehero_atk1");
                 scene3_mage2.Play("mage_atk1");
                 boss_name_text.text = scene3_boss_name;
                 break;
             case 4:
-                playerAnimator.Play("HeroKnight_Attack1");
+                // playerAnimator.Play("HeroKnight_Attack1");
                 scene4_king.Play("eking_atk1");
                 boss_name_text.text = scene4_boss_name;
                 break;
@@ -125,37 +128,48 @@ public class SceneMoveManager : MonoBehaviour
         boss_hp_ui.SetActive(true);
     }
 
+    public void play_attack_animation(){
+        playerAnimator.Play("HeroKnight_Attack1");
+        SoundManager.instance.PlayOneShot(FmodEvents.instance.PlayerAttack, transform.position);
+    }
+
     public void updateBossHp(){
         boss_hp_slider.value = (float)BattleManager.instance.stage_hp / first_stage_hp;
     }
 
-    public void winFight(int scene_num){
-        switch(scene_num){
-            case 1:
-                scene1_goblin.Play("go_death");
-                scene1_mushroom.Play("mushdeath");
-                scene1_skeleton.Play("skeletondeath");
-                moveNextStage(tokenSource.Token).Forget();
-                break;
-            case 2:
-                scene2_sword.Play("sword_dead");
-                scene2_spear.Play("spear_dead");
-                scene2_bow.Play("bow_dead");
-                moveNextStage(tokenSource.Token).Forget();
-                break;
-            case 3:
-                scene3_mage1.Play("mage_dead");
-                scene3_ehero.Play("ehero_dead");
-                scene3_mage2.Play("mage_dead");
-                moveNextStage(tokenSource.Token).Forget();
-                break;
-            case 4:
-                playerAnimator.Play("HeroKnight_Idle");
-                scene4_king.Play("eking_dead");
-                //대충 엔딩 처리하는 내용
-                break;
-        }
+    public async UniTask winFight(int scene_num){
+        tetris.tetris_reset();
+        BattleManager.instance.player_hp = BattleManager.instance.player_maxHp;
+        BattleManager.instance.updatePlayerHP();
         boss_hp_ui.SetActive(false);
+        tetris.tetris_stop();
+
+        SoundManager.instance.PlaySoundStopBGM(FmodEvents.instance.Win, transform.position, 4.2f).Forget();
+        if(scene_num < 4){
+            switch(scene_num){
+                case 1:
+                    scene1_goblin.Play("go_death");
+                    scene1_mushroom.Play("mushdeath");
+                    scene1_skeleton.Play("skeletondeath");
+                    break;
+                case 2:
+                    scene2_sword.Play("sword_dead");
+                    scene2_spear.Play("spear_dead");
+                    scene2_bow.Play("bow_dead");
+                    break;
+                case 3:
+                    scene3_mage1.Play("mage_dead");
+                    scene3_ehero.Play("ehero_dead");
+                    scene3_mage2.Play("mage_dead");
+                    break;
+            }
+            SoundManager.instance.PlaySoundStopBGM(FmodEvents.instance.Win, transform.position, 4.2f).Forget();
+            await UniTask.Delay(4200);
+            moveNextStage(tokenSource.Token).Forget();
+        }
+        else{
+            scene4_king.Play("eking_dead");
+        }
     }
 
     private void OnDestroy()
