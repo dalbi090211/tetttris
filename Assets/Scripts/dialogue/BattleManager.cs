@@ -19,13 +19,17 @@ public class BattleManager : MonoBehaviour
     private int combo_count;
 
     //================================ 고정값 =================================
-    public int stage1_hp = 100;
-    public int stage2_hp = 150;
-    public int stage3_hp = 200;
+    [SerializeField] private int stage1_hp;
+    [SerializeField] private int stage2_hp;
+    [SerializeField] private int stage3_hp;
+    [SerializeField] private int stage4_hp;
 
     //================================ 변동값 =================================
-    public int player_maxHp = 100;
+    public int player_maxHp = 50;
     private int comboSeq = 1;
+    public int stageDamage = 10;
+    public float comboRatio = 0.2f;
+    public Boolean can_trash = false;
 
     public void updatePlayerHP(){
         player_hp_slider.value = (float)player_hp / player_maxHp;
@@ -53,30 +57,43 @@ public class BattleManager : MonoBehaviour
             case 3:
                 stage_hp = stage3_hp;
                 break;
+            case 4:
+                stage_hp = stage4_hp;
+                break;
         }
     }
 
-    public Boolean player_attack(int[] blocks, Boolean is_combo){   //Player에서 공격할 때 호출
-        //debug용
-        int damage = 50;
+    private int sqrt2(int block){
+        if(block == 0){
+            return 1;
+        }
+        return 2*sqrt2(block-1);
+    }
+
+    public Boolean player_attack(int[] blocks, Boolean is_combo, Boolean is_hitted){   //Player에서 공격할 때 호출
+        //데미지 연산 로직
+        float damage = 0;
+        for(int i = 0; i < blocks.Length; i++){
+            damage += sqrt2(blocks[i]);
+        }
 
         if(is_combo){
+            damage = damage * (1 + (comboRatio*comboSeq));
             comboSeq++;
         }
         else{
             comboSeq = 1;
         }
-        player_hp -= 10;
+
+        if(is_hitted && can_trash){
+            damage = damage * 1.6f;
+        }
+
+        player_hp -= stageDamage;
         updatePlayerHP();
         SceneMoveManager.instance.play_attack_animation();
-        update_damage_text(damage, comboSeq).Forget();
-        
-        /**
-         * 대충 한번에 부순 블록조합에 따라 퍽들에 따라 증가한 계수로 데미지 증가해서 stage_hp에 빼주는 로직
-         */
-
-        //debug용
-        stage_hp -= damage;
+        update_damage_text((int)damage, comboSeq).Forget();
+        stage_hp -= (int)damage;
         SceneMoveManager.instance.updateBossHp();
         if(stage_hp <= 0){  //죽기 전에 깨면 ok
             winBattle();

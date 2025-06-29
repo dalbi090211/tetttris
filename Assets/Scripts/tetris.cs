@@ -29,7 +29,8 @@ public class tetris : MonoBehaviour
     [SerializeField] private GameObject next1_panel;
     [SerializeField] private GameObject next2_panel;
     [SerializeField] private GameObject next3_panel;
-    
+    [SerializeField] private GameObject line_clear_effect;
+    public static tetris instance;
     private float abs_unit;
     private Vector3 offset;
     private GameObject block_visual;    //현재 쥐고 있는 블록
@@ -43,7 +44,7 @@ public class tetris : MonoBehaviour
     private tetris_type[] start_type = {tetris_type.ㅣ, tetris_type.ㄴ, tetris_type.ㅁ, tetris_type.ㄹ, tetris_type.ㅗ, tetris_type.reverse_ㄴ, tetris_type.reverse_ㄹ};    //게임 시작 시의 초기 조합
     
     // 현재 매트릭스
-    private tetris_type[] current_type; // 현재 리스트에 초기화 시킬 블록 타입
+    public tetris_type[] current_type; // 현재 리스트에 초기화 시킬 블록 타입
     private List<tetris_type> current_list; // 현재 남은 블록 리스트
     private int[,] board; // 현재 테트리스 매트릭스 정보
 
@@ -78,6 +79,7 @@ public class tetris : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
         abs_unit = target_panel.GetComponent<RectTransform>().rect.width / (col_max+2);
         Debug.Log("abs : " + abs_unit);
         col_max += 2;   //technologia
@@ -398,6 +400,7 @@ public class tetris : MonoBehaviour
         complete_block_shapes = new int[8];
         HashSet<int> affected_rows = new HashSet<int>();
         HashSet<int> affected_cols = new HashSet<int>();
+        Boolean is_overlap = false;
         
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
@@ -408,8 +411,11 @@ public class tetris : MonoBehaviour
                     board[x, y] = (int)current_block_type;
                     if(visual_board[x, y] != null) {
                         BattleManager.instance.player_overlap(1);
+                        is_overlap = true;
                         Destroy(visual_board[x, y]);
                     }
+                    
+                    // 부모를 명시적으로 target_panel로 지정
                     visual_board[x, y] = Instantiate(get_zzabari_block(current_block_type), Vector3.zero, Quaternion.identity, target_panel.transform);
                     Vector2 block_pos = new Vector2(x * abs_unit + offset.x, y * abs_unit + offset.y);
                     visual_board[x, y].GetComponent<RectTransform>().anchoredPosition = block_pos;
@@ -435,7 +441,7 @@ public class tetris : MonoBehaviour
         }
         
         if(complete_block_shapes.Sum() > 0){
-            if(BattleManager.instance.player_attack(complete_block_shapes, is_combo)){
+            if(BattleManager.instance.player_attack(complete_block_shapes, is_combo, is_overlap)){
                 return;
             }
             is_combo = true;
@@ -515,11 +521,15 @@ public class tetris : MonoBehaviour
                 visual_board[x, row] = null;
             }
         }
-        
+
+        create_clear_effect_row(row);
+
         // 보드 데이터 제거
         for(int x = 0; x < col_max; x++){
-            complete_block_shapes[board[x, row]]++;
-            board[x, row] = (int)tetris_type.None;
+            if(board[x, row] != (int)tetris_type.None){
+                complete_block_shapes[board[x, row]]++;
+                board[x, row] = (int)tetris_type.None;
+            }
         }
     }
     
@@ -532,11 +542,15 @@ public class tetris : MonoBehaviour
                 visual_board[col, y] = null;
             }
         }
+
+        create_clear_effect_col(col);
         
         // 보드 데이터 제거
         for(int y = 0; y < row_max; y++){
-            complete_block_shapes[board[col, y]]++;
-            board[col, y] = (int)tetris_type.None;
+            if(board[col, y] != (int)tetris_type.None){
+                complete_block_shapes[board[col, y]]++;
+                board[col, y] = (int)tetris_type.None;
+            }
         }
     }
     
@@ -580,5 +594,39 @@ public class tetris : MonoBehaviour
                 next_block_visuals[i].GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             }
         }
+    }
+
+    private void create_clear_effect_col(int col){
+        if(line_clear_effect == null) return;
+
+        GameObject effect = Instantiate(line_clear_effect, Vector3.zero, Quaternion.identity, target_panel.transform);
+        
+        RectTransform effectRT = effect.GetComponent<RectTransform>();
+        float width = abs_unit;
+        float height = row_max * abs_unit;
+
+        effectRT.sizeDelta = new Vector2(width, height);
+
+        Vector2 pos = new Vector2(offset.x + (col-1) * abs_unit - abs_unit/2, offset.y + (row_max - 1) * abs_unit / 2);
+        effectRT.anchoredPosition = pos;
+
+        Destroy(effect, 1.5f);
+    }
+
+    private void create_clear_effect_row(int row){
+        if(line_clear_effect == null) return;
+
+        GameObject effect = Instantiate(line_clear_effect, Vector3.zero, Quaternion.identity, target_panel.transform);
+        
+        RectTransform effectRT = effect.GetComponent<RectTransform>();
+        float width = col_max * abs_unit;
+        float height = abs_unit;
+
+        effectRT.sizeDelta = new Vector2(width, height);
+
+        Vector2 pos = new Vector2(offset.x + (col_max - 1) * abs_unit / 2, offset.y + (row-2) * abs_unit - abs_unit/2);
+        effectRT.anchoredPosition = pos;
+
+        Destroy(effect, 1.5f); // 효과가 끝나고 자동 제거
     }
 }

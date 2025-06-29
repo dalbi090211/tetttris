@@ -134,7 +134,11 @@ public class SceneMoveManager : MonoBehaviour
     }
 
     public void updateBossHp(){
-        boss_hp_slider.value = (float)BattleManager.instance.stage_hp / first_stage_hp;
+        if(boss_hp_slider != null && boss_hp_ui != null){
+            // 보스 체력바의 부모를 명시적으로 유지
+            boss_hp_slider.transform.SetParent(boss_hp_ui.transform, false);
+            boss_hp_slider.value = (float)BattleManager.instance.stage_hp / first_stage_hp;
+        }
     }
 
     public async UniTask winFight(int scene_num){

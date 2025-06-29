@@ -17,7 +17,7 @@ public enum item_name
     shield,
     sword,
     trash,
-}
+}   
 
 public class selection_manager : MonoBehaviour
 {
@@ -101,19 +101,19 @@ public class selection_manager : MonoBehaviour
     private string itemExplain(item_name item_name){
         switch(item_name){  //debug
             case item_name.bomb:
-                return "폭탄 : 적을 파괴합니다.";
+                return "블록의 선택 시간이 감소하는 대신 점수의 배율 50%이 증가합니다.";
             case item_name.broom:
-                return "청소기 : 적을 파괴합니다.";
+                return "덱에 2개의 ㅣ자와 ㅁ자 블록을 추가합니다.";
             case item_name.candle:
-                return "촛불 : 적을 파괴합니다.";
+                return "덱에 모든 ㄹ자를 제거합니다.";
             case item_name.cannon:
-                return "대포 : 적을 파괴합니다.";
+                return "동일한 유형의 블록을 여러 개 클리어 했을 시의 추가 배율이 20% 증가합니다.";
             case item_name.shield:
-                return "방패 : 적을 파괴합니다.";
+                return "최대 체력이 20 증가합니다.";
             case item_name.sword:
-                return "검 : 적을 파괴합니다.";
+                return "콤보의 배율이 40% 증가합니다.";
             case item_name.trash:
-                return "쓰레기 : 적을 파괴합니다.";
+                return "자해하면서 공격 시 점수의 배율이 60% 증가합니다.";
             default:
                 return "null";
         }
