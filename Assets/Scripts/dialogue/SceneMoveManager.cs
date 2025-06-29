@@ -165,11 +165,16 @@ public class SceneMoveManager : MonoBehaviour
             }
             SoundManager.instance.PlaySoundStopBGM(FmodEvents.instance.Win, transform.position, 4.2f).Forget();
             await UniTask.Delay(4200);
-            moveNextStage(tokenSource.Token).Forget();
+            selection_manager.instance.startSelection();
         }
         else{
             scene4_king.Play("eking_dead");
         }
+    }
+
+    public void endSelection(){
+        inputSceneMover.instance.moveScene();
+        moveNextStage(tokenSource.Token).Forget();
     }
 
     private void OnDestroy()
