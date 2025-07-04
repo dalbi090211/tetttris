@@ -62,4 +62,8 @@ public class clear_effect : MonoBehaviour
         // 오브젝트 제거
         Destroy(gameObject);
     }
+
+    public void endEffectFrame(){
+        Destroy(gameObject);
+    }
 }

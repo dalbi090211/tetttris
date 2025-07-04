@@ -1,8 +1,11 @@
+// using System.Diagnostics;
 using System;
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Cysharp.Threading.Tasks;
+using System.Threading;
 
 public enum tetris_type{
     None = 0,
@@ -23,6 +26,9 @@ public struct tetris_set{   //hash도 좋을수도
 
 public class tetris : MonoBehaviour
 {
+    //싱글톤
+    public static tetris instance;
+
     //비쥬얼 업데이트
     [SerializeField] private GameObject target_panel;
     [SerializeField] private GameObject hold_panel;
@@ -30,19 +36,26 @@ public class tetris : MonoBehaviour
     [SerializeField] private GameObject next2_panel;
     [SerializeField] private GameObject next3_panel;
     [SerializeField] private GameObject line_clear_effect;
-    public static tetris instance;
+
+    // 테트리스 정보
     private float abs_unit;
-    private Vector3 offset;
+    private Vector3 offset; // 판때기 보정치
     private GameObject block_visual;    //현재 쥐고 있는 블록
     private GameObject[,] visual_board; //현재 보드의 모든 칸 오브젝트
-    private Boolean canMove = false;
-    private Boolean is_combo = false;
+    private Boolean canMove = false; // 테트리스 이동 가능 여부
+    private Boolean is_combo = false; // 콤보 여부
 
     // 초기설정용 상수
     private int col_max = 8;
     private int row_max = 10;
     private tetris_type[] start_type = {tetris_type.ㅣ, tetris_type.ㄴ, tetris_type.ㅁ, tetris_type.ㄹ, tetris_type.ㅗ, tetris_type.reverse_ㄴ, tetris_type.reverse_ㄹ};    //게임 시작 시의 초기 조합
     
+    // 타이머
+    private Color original_pan_color = new Color(144/255f, 133/255f, 125/255f, 1f); // 판때기 원래 색상
+    private Color blink_block_color = new Color(202/255f, 186/255f, 174/255f, 1f); // 판때기 깜빡임 색상
+
+
+
     // 현재 매트릭스
     public tetris_type[] current_type; // 현재 리스트에 초기화 시킬 블록 타입
     private List<tetris_type> current_list; // 현재 남은 블록 리스트
@@ -54,8 +67,8 @@ public class tetris : MonoBehaviour
     private int[] current_block_position; // 현재 블록 위치
     private int[,] current_block_shape; // 현재 블록 모양
     private int block_rotation; // 현재 블록 회전 상태
-    private int[] last_block_position;
-    private int[] complete_block_shapes;
+    private int[] last_block_position; // 마지막 블록 위치
+    private int[] complete_block_shapes; // 클리어할 때 구성된 블록의 개수
     
     // 홀드 시스템
     private tetris_type? held_block_type; // 홀드된 블록 (null 가능)
@@ -75,7 +88,11 @@ public class tetris : MonoBehaviour
     
     // 게임 타이머
     private float fall_timer = 0f;
-    private float fall_speed = 3f;
+    private float blink_timing = 3f;
+    private float set_blink_timing = 3f;
+    private int blink_count = 300;
+    private CancellationTokenSource blink_token;
+    private int blink_small_delay = 200;  //최소 깜빡임 시간
 
     private void Start()
     {
@@ -94,12 +111,13 @@ public class tetris : MonoBehaviour
     private void Update()
     {
         if(!canMove) return;
-        // 자동 낙하
         fall_timer += Time.deltaTime;
-        if(fall_timer >= fall_speed)
+        if(fall_timer >= blink_timing && blink_timing != -1f)
         {
-            // place_block();
-            fall_timer = 0f;
+            blink_token = new CancellationTokenSource();
+            blink_timing = -1f;
+            blink_count = 400;
+            place_timer(blink_token.Token).Forget();
         }
 
         if(Input.GetKeyDown(KeyCode.Space)){
@@ -123,6 +141,44 @@ public class tetris : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.RightArrow)){
             move_block(1, 0);
         }
+    }
+
+    private async UniTask place_timer(CancellationToken token){
+        try
+        {
+            while (blink_count > -165 && !token.IsCancellationRequested)
+            {
+                blink();
+                blink_count -= 35;
+                await UniTask.Delay(blink_count + blink_small_delay, cancellationToken: token);
+            }
+
+            if (!token.IsCancellationRequested)
+            {
+                place_block(); // 취소되지 않은 경우에만 호출
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            // 정상 취소: 아무것도 안 해도 됨
+        }
+        
+    }
+
+    private void finish_place(){
+        if(blink_token != null){
+            if (!blink_token.IsCancellationRequested)
+                blink_token.Cancel();
+            blink_token.Dispose();
+            blink_token = null;
+        }
+        target_panel.GetComponent<SpriteRenderer>().color = original_pan_color;
+        fall_timer = 0f;
+        blink_timing = set_blink_timing;
+    }
+
+    private void blink(){
+        target_panel.GetComponent<SpriteRenderer>().color = blink_count % 2 == 0 ? blink_block_color : original_pan_color;
     }
 
     public void tetris_start(){
@@ -396,6 +452,8 @@ public class tetris : MonoBehaviour
     }
 
     private void place_block(){
+        finish_place();
+
         // 블록을 보드에 고정
         complete_block_shapes = new int[8];
         HashSet<int> affected_rows = new HashSet<int>();
@@ -416,6 +474,7 @@ public class tetris : MonoBehaviour
                     }
                     
                     // 부모를 명시적으로 target_panel로 지정
+                    Debug.Log("x : " + x + " y : " + y);
                     visual_board[x, y] = Instantiate(get_zzabari_block(current_block_type), Vector3.zero, Quaternion.identity, target_panel.transform);
                     Vector2 block_pos = new Vector2(x * abs_unit + offset.x, y * abs_unit + offset.y);
                     visual_board[x, y].GetComponent<RectTransform>().anchoredPosition = block_pos;
@@ -600,32 +659,19 @@ public class tetris : MonoBehaviour
         if(line_clear_effect == null) return;
 
         GameObject effect = Instantiate(line_clear_effect, Vector3.zero, Quaternion.identity, target_panel.transform);
-        
-        RectTransform effectRT = effect.GetComponent<RectTransform>();
-        float width = abs_unit;
-        float height = row_max * abs_unit;
-
-        effectRT.sizeDelta = new Vector2(width, height);
-
-        Vector2 pos = new Vector2(offset.x + (col-1) * abs_unit - abs_unit/2, offset.y + (row_max - 1) * abs_unit / 2);
-        effectRT.anchoredPosition = pos;
-
-        Destroy(effect, 1.5f);
+        effect.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, 90);
+        Debug.Log("col : " + col);
+        Vector2 pos = new Vector2(offset.x + (col) * abs_unit, offset.y + 2 * abs_unit);
+        effect.GetComponent<RectTransform>().anchoredPosition = pos;
     }
 
     private void create_clear_effect_row(int row){
         if(line_clear_effect == null) return;
 
         GameObject effect = Instantiate(line_clear_effect, Vector3.zero, Quaternion.identity, target_panel.transform);
-        
-        RectTransform effectRT = effect.GetComponent<RectTransform>();
-        float width = col_max * abs_unit;
-        float height = abs_unit;
-
-        effectRT.sizeDelta = new Vector2(width, height);
-
-        Vector2 pos = new Vector2(offset.x + (col_max - 1) * abs_unit / 2, offset.y + (row-2) * abs_unit - abs_unit/2);
-        effectRT.anchoredPosition = pos;
+        Debug.Log("row : " + row);
+        Vector2 pos = new Vector2(offset.x + (float)4.5 * abs_unit, offset.y + (float)(row-2.25) * abs_unit);
+        effect.GetComponent<RectTransform>().anchoredPosition = pos;
 
         Destroy(effect, 1.5f); // 효과가 끝나고 자동 제거
     }
